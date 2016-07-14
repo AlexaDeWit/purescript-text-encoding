@@ -1,9 +1,7 @@
 module Data.TextEncoder
-  ( Encoding (..)
-  , TextEncoder
+  ( Encoding(..)
   , encode
   , encodeUtf8
-  , textEncoder
   )
 where
 
@@ -12,64 +10,30 @@ import Data.Function.Uncurried (Fn2, runFn2)
 import Prelude
 
 
-{-
-  ===============
-    TextEncoder
-  ===============
--}
+-- | Encodes a `String` to a `Uint8Array` with the given `Encoding`.
+encode :: Encoding -> String -> Uint8Array
+encode encoding str = runFn2 _encode (show encoding) str
 
--- | For further information see
--- | https://developer.mozilla.org/en-US/docs/Web/API/TextEncoder
-foreign import data TextEncoder :: *
-
--- | Encodes a `String` to a `Uint8Array` via the given `TextEncoder`.
-encode :: TextEncoder -> String -> Uint8Array
-encode txtEnc str = runFn2 _encode txtEnc str
+foreign import _encode :: Fn2 String String Uint8Array
 
 -- | Encodes a `String` to a `Uint8Array` using UTF-8 encoding.
 -- | This function is provided as a convenience as UTF-8 is the
 -- | encoding you will probably be using most of the time.
 encodeUtf8 :: String -> Uint8Array
-encodeUtf8 = encode (textEncoder Utf8)
+encodeUtf8 = encode Utf8
 
--- Internal helper function.
-foreign import _encode :: Fn2 TextEncoder String Uint8Array
-
--- | Create a `TextEncoder`.
--- |
--- | Example:
--- | ```purescript
--- | utf8Encoder = textEncoder Utf8
--- | ```
-textEncoder :: Encoding -> TextEncoder
-textEncoder = _textEncoder <<< toUtfLabel
-
--- Internal helper function.
-foreign import _textEncoder :: String -> TextEncoder
-
-
-{-
-  =======================
-    Character Encodings
-  =======================
--}
-
--- | Possible character encodings for `TextEncoder`.
+-- | Possible character encodings.
 -- | For further information see
 -- | https://encoding.spec.whatwg.org/#names-and-labels
 data Encoding
   = Utf8
-
   -- Legacy encodings
   | Utf_16Be
   | Utf_16Le
 
+-- The show instance is used to convert an `Encoding` to a suitable
+-- `utfLabel` string that is used in the internal `_encode` helper function.
 instance showEncoding :: Show Encoding where
-  show = toUtfLabel
-
--- Converts an `Encoding` to a `String` (`utfLabel`) that is used to
--- create a `TextEncoder`.
-toUtfLabel :: Encoding -> String
-toUtfLabel Utf8     = "utf-8"
-toUtfLabel Utf_16Be = "utf-16be"
-toUtfLabel Utf_16Le = "utf-16le"
+  show Utf8     = "utf-8"
+  show Utf_16Be = "utf-16be"
+  show Utf_16Le = "utf-16le"

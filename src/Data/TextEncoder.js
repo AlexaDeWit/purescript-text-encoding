@@ -5,12 +5,8 @@ var TextEncoder =
   (typeof window === "object" && window.TextEncoder)
   || (typeof require === "function" && require("text-encoding").TextEncoder);
 
-// Returns a `TextEncoder` with the specified `utfLabel` encoding.
-exports._textEncoder = function (utfLabel) {
-  return new TextEncoder(utfLabel);
-};
+exports._encode = function (utfLabel, str) {
+  var encoder = new TextEncoder(utfLabel);
 
-// Encodes a `DOMString` via the given `TextEncoder`
-exports._encode = function (encoder, str) {
   return encoder.encode(str);
 };
