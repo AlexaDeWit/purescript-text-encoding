@@ -2,17 +2,18 @@ module Test.Encoding
   ( testEncoding )
 where
 
-import Control.Monad.Eff.Console (log)
+import Effect                    (Effect)
+import Effect.Console            (log)
 import Data.Either               (fromRight)
 import Data.TextDecoder          (decodeUtf8)
 import Data.TextEncoder          (encodeUtf8)
 import Partial.Unsafe            (unsafePartial)
 import Prelude
 import Test.Input                (WellFormedInput(..))
-import Test.StrongCheck          (Result, SC, (===), quickCheck)
+import Test.StrongCheck          (Result, (===), quickCheck)
 
 
-testEncoding :: SC () Unit
+testEncoding :: Effect Unit
 testEncoding = do
   log "Check that `fromRight <<< decodeUtf8 <<< encodeUtf8 == id`"
   -- Note that this identity is not strictly true.

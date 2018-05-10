@@ -24,18 +24,18 @@
     "tests"
   ],
   "dependencies": {
-    "purescript-prelude": "^3.0.0",
-    "purescript-functions": "^3.0.0",
-    "purescript-either": "^3.0.0",
+    "purescript-prelude": "#compiler/0.12",
+    "purescript-functions": "#compiler/0.12",
+    "purescript-either": "#compiler/0.12",
     "purescript-arraybuffer-types": "^2.0.0",
-    "purescript-exceptions": "^3.0.0"
+    "purescript-exceptions": "#compiler/0.12"
   },
   "devDependencies": {
-    "purescript-console": "^3.0.0",
-    "purescript-strongcheck": "^3.0.0",
-    "purescript-unicode": "^3.0.0",
-    "purescript-partial": "^1.1.2",
-    "purescript-stringutils": "^0.0.5",
-    "purescript-unsafe-coerce": "^3.0.0"
+    "purescript-console": "#compiler/0.12",
+    "purescript-strongcheck": "#compiler/0.12",
+    "purescript-unicode": "#compiler/0.12",
+    "purescript-partial": "#compiler/0.12",
+    "purescript-stringutils": "#compiler/0.12",
+    "purescript-unsafe-coerce": "#compiler/0.12"
   }
 }
