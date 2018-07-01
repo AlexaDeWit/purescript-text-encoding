@@ -1,7 +1,7 @@
 module Test.Main where
 
-import Prelude
 import Effect        (Effect)
+import Prelude
 import Test.Encoding (testEncoding)
 
 main :: Effect Unit
