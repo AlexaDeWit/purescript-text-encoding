@@ -5,7 +5,7 @@ module Data.TextDecoder
   )
 where
 
-import Control.Monad.Eff.Exception (Error)
+import Effect.Exception            (Error)
 import Data.ArrayBuffer.Types      (ArrayView)
 import Data.Either                 (Either (Left, Right))
 import Data.Function.Uncurried     (Fn4, runFn4)

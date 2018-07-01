@@ -3,10 +3,10 @@ module Test.Input
 where
 
 import Data.Char.Unicode          (isPrint)
-import Data.String.Utils          (filter)
 import Prelude
+import Data.Array                 (filter)
+import Data.String.CodeUnits      (fromCharArray, toCharArray)
 import Test.StrongCheck.Arbitrary (class Arbitrary, arbitrary)
-import Unsafe.Coerce              (unsafeCoerce)
 
 
 -- When UTF8-encoding a string, surrogate code points and other non-characters
@@ -24,10 +24,7 @@ newtype WellFormedInput = WellFormedInput String
 -- out of the first 65536 unicode code points.
 -- See `charGen` in `purescript-strongcheck`.
 instance arbWellFormedInput :: Arbitrary WellFormedInput where
-  arbitrary = WellFormedInput <<< filter isPrint' <$> arbitrary
+  arbitrary = WellFormedInput <<< filterString isPrint <$> arbitrary
 
--- We use `String` instead of `Char` here because PureScript `Char`s must be
--- UTF-16 code units and hence cannot represent all Unicode code points.
--- This function can safely be used here as `filter` iterates over code points.
-isPrint' :: String -> Boolean
-isPrint' = unsafeCoerce isPrint
+filterString :: (Char -> Boolean) -> String -> String
+filterString f s = fromCharArray <<< filter f $ toCharArray s
