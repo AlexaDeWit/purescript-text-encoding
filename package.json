@@ -7,10 +7,10 @@
   },
   "repository": {
     "type": "git",
-    "url": "git://github.com/menelaos/purescript-encoding.git"
+    "url": "git://github.com/AlexaDeWit/purescript-text-encoding.git"
   },
   "bugs": {
-    "url": "https://github.com/menelaos/purescript-encoding/issues"
+    "url": "https://github.com/AlexaDeWit/purescript-text-encoding/issues"
   },
   "keywords": [
     "purescript",
