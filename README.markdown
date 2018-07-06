@@ -1,4 +1,4 @@
-# purescript-encoding
+# purescript-text-encoding
 
 [WHATWG/W3C Encoding Standard](https://encoding.spec.whatwg.org/)
 
@@ -16,3 +16,11 @@ text-encoding`.
 ## Documentation
 
 Module documentation is [published on Pursuit](http://pursuit.purescript.org/packages/purescript-encoding).
+
+## Notes on Purescript versions
+
+This project is a continuation fork of the purescript-encoding package released by the user menelaos.
+
+The first release for this package is v0.0.7 and supports purescript 0.12
+
+For earlier purescript versions please see [the original upstream package](https://github.com/menelaos/purescript-encoding)
