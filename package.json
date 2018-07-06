@@ -1,5 +1,5 @@
 {
-  "name": "purescript-encoding",
+  "name": "purescript-text-encoding",
   "description": "WHATWG/W3C Encoding Standard",
   "scripts": {
     "build": "purs compile \"src/**/*.purs\" \"bower_components/purescript-*/src/**/*.purs\"",

@@ -1,5 +1,5 @@
 {
-  "name": "purescript-encoding",
+  "name": "purescript-text-encoding",
   "description": "WHATWG/W3C Encoding Standard",
   "authors": [
     "Andreas Schacker"
@@ -7,7 +7,7 @@
   "license": "Apache-2.0",
   "repository": {
     "type": "git",
-    "url": "git://github.com/menelaos/purescript-encoding.git"
+    "url": "git://github.com/AlexaDeWit/purescript-text-encoding.git"
   },
   "keywords": [
     "purescript",
@@ -29,7 +29,8 @@
     "purescript-either": "^4.0.0",
     "purescript-arraybuffer-types": "^2.0.0",
     "purescript-exceptions": "^4.0.0",
-    "purescript-strings": "^4.0.0"
+    "purescript-strings": "^4.0.0",
+    "purescript-encoding-continued": "^0.0.4"
   },
   "devDependencies": {
     "purescript-console": "^4.0.0",
