@@ -5,11 +5,11 @@
 ## Installation
 
 ```
-bower install purescript-encoding
+bower install purescript-text-encoding
 ```
 
 This package relies on the `TextEncoder` and `TextDecoder` interfaces which are
-not yet supported everywhere. If you want to use `purescript-encoding` in such
+not yet supported everywhere. If you want to use `purescript-text-encoding` in such
 an environment, you will need to install a polyfill: `npm install
 text-encoding`.
 
