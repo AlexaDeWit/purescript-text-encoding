@@ -93,7 +93,7 @@ instance showEncoding :: Show Encoding where
   show Iso_8859_4     = "iso-8859-4"
   show Iso_8859_5     = "iso-8859-5"
   show Iso_8859_6     = "iso-8859-6"
-  show Iso_8859_7     = "iso-8859-8"
+  show Iso_8859_7     = "iso-8859-7"
   show Iso_8859_8     = "iso-8859-8"
   show Iso_8859_8_I   = "iso-8859-8-i"
   show Iso_8859_10    = "iso-8859-10"
