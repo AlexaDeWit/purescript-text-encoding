@@ -4,7 +4,8 @@
   "scripts": {
     "clean": "rimraf output && rimraf .pulp-cache",
     "build": "eslint src && pulp build -- --censor-lib --strict",
-    "test": "pulp test"
+    "test": "pulp test",
+    "publish": "pulp test && pulp publish"
   },
   "repository": {
     "type": "git",
