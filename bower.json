@@ -2,7 +2,8 @@
   "name": "purescript-text-encoding",
   "description": "WHATWG/W3C Encoding Standard",
   "authors": [
-    "Andreas Schacker"
+    "Andreas Schacker",
+    "Alexandra DeWit"
   ],
   "license": "Apache-2.0",
   "repository": {
