@@ -15,7 +15,7 @@ text-encoding`.
 
 ## Documentation
 
-Module documentation is [published on Pursuit](http://pursuit.purescript.org/packages/purescript-encoding).
+Module documentation is [published on Pursuit](http://pursuit.purescript.org/packages/purescript-text-encoding).
 
 ## Notes on Purescript versions
 
