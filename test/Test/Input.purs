@@ -24,7 +24,7 @@ newtype WellFormedInput = WellFormedInput String
 -- out of the first 65536 unicode code points.
 -- See `charGen` in `purescript-strongcheck`.
 instance arbWellFormedInput :: Arbitrary WellFormedInput where
-  arbitrary = WellFormedInput <<< filterString isPrint <$> arbitrary
+  arbitrary = WellFormedInput <$> arbitrary
 
 filterString :: (Char -> Boolean) -> String -> String
 filterString f s = fromCharArray <<< filter f $ toCharArray s

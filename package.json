@@ -2,8 +2,9 @@
   "name": "purescript-text-encoding",
   "description": "WHATWG/W3C Encoding Standard",
   "scripts": {
-    "build": "purs compile \"src/**/*.purs\" \"bower_components/purescript-*/src/**/*.purs\"",
-    "test": "purs compile \"src/**/*.purs\" \"bower_components/purescript-*/src/**/*.purs\" \"test/**/*.purs\" && purs bundle \"output/**/*.js\" --module Test.Main --main Test.Main | node"
+    "clean": "rimraf output && rimraf .pulp-cache",
+    "build": "eslint src && pulp build -- --censor-lib --strict",
+    "test": "pulp test"
   },
   "repository": {
     "type": "git",
@@ -22,6 +23,9 @@
   "author": "Andreas Schacker",
   "license": "Apache-2.0",
   "devDependencies": {
-    "text-encoding": "^0.6.4"
+    "text-encoding": "^0.6.4",
+    "pulp": "^12.2.0",
+    "purescript-psa": "^0.6.0",
+    "rimraf": "^2.6.2"
   }
 }
