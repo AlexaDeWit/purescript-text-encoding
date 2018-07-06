@@ -29,8 +29,7 @@
     "purescript-either": "^4.0.0",
     "purescript-arraybuffer-types": "^2.0.0",
     "purescript-exceptions": "^4.0.0",
-    "purescript-strings": "^4.0.0",
-    "purescript-encoding-continued": "^0.0.4"
+    "purescript-strings": "^4.0.0"
   },
   "devDependencies": {
     "purescript-console": "^4.0.0",
