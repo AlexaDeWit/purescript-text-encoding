@@ -1,9 +1,7 @@
-module Test.Input
-  ( WellFormedInput(..) )
-where
+module Test.Input where
 
 import Data.Char.Unicode          (isPrint)
-import Prelude
+import Prelude                    ((<$>), ($), (<<<))
 import Data.Array                 (filter)
 import Data.String.CodeUnits      (fromCharArray, toCharArray)
 import Test.StrongCheck.Arbitrary (class Arbitrary, arbitrary)
