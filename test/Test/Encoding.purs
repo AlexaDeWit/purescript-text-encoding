@@ -2,14 +2,13 @@ module Test.Encoding
   ( testEncoding )
 where
 
-import Prelude (Unit, discard, ($), (<<<))
-
-import Data.Either (fromRight)
+import Prelude          (Unit, discard, ($), (<<<))
+import Data.Either      (fromRight)
 import Data.TextDecoder (decodeUtf8)
 import Data.TextEncoder (encodeUtf8)
-import Effect (Effect)
-import Effect.Console (log)
-import Partial.Unsafe (unsafePartial)
+import Effect           (Effect)
+import Effect.Console   (log)
+import Partial.Unsafe   (unsafePartial)
 import Test.Input
 import Test.StrongCheck (Result, (===), quickCheck)
 
