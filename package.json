@@ -3,7 +3,7 @@
   "description": "WHATWG/W3C Encoding Standard",
   "scripts": {
     "clean": "rimraf output && rimraf .pulp-cache",
-    "build": "eslint src && pulp build -- --censor-lib --strict",
+    "build": "pulp build -- --censor-lib --strict",
     "test": "pulp test",
     "publish": "pulp test && pulp publish"
   },
