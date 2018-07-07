@@ -34,7 +34,7 @@
   },
   "devDependencies": {
     "purescript-console": "^4.0.0",
-    "purescript-strongCheck": "^4.1.1",
+    "purescript-strongcheck": "^4.1.1",
     "purescript-unicode": "^4.0.0",
     "purescript-partial": "^2.0.0"
   }
