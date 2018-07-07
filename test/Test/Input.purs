@@ -1,9 +1,7 @@
-module Test.Input
-  ( WellFormedInput(..) )
-where
+module Test.Input where
 
 import Data.Char.Unicode          (isPrint)
-import Prelude
+import Prelude                    ((<$>), ($), (<<<))
 import Data.Array                 (filter)
 import Data.String.CodeUnits      (fromCharArray, toCharArray)
 import Test.StrongCheck.Arbitrary (class Arbitrary, arbitrary)
@@ -24,7 +22,7 @@ newtype WellFormedInput = WellFormedInput String
 -- out of the first 65536 unicode code points.
 -- See `charGen` in `purescript-strongcheck`.
 instance arbWellFormedInput :: Arbitrary WellFormedInput where
-  arbitrary = WellFormedInput <$> arbitrary
+  arbitrary = WellFormedInput <<< filterString isPrint <$> arbitrary
 
 filterString :: (Char -> Boolean) -> String -> String
 filterString f s = fromCharArray <<< filter f $ toCharArray s
