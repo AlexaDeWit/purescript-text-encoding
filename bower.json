@@ -1,29 +1,14 @@
 {
   "name": "purescript-text-encoding",
   "description": "WHATWG/W3C Encoding Standard",
-  "authors": [
-    "Andreas Schacker",
-    "Alexandra DeWit"
-  ],
+  "authors": ["Andreas Schacker", "Alexandra DeWit"],
   "license": "Apache-2.0",
   "repository": {
     "type": "git",
     "url": "git://github.com/AlexaDeWit/purescript-text-encoding.git"
   },
-  "keywords": [
-    "purescript",
-    "encode",
-    "decode",
-    "TextEncoder",
-    "TextDecoder"
-  ],
-  "ignore": [
-    "**/.*",
-    "node_modules",
-    "bower_components",
-    "test",
-    "tests"
-  ],
+  "keywords": ["purescript", "encode", "decode", "TextEncoder", "TextDecoder"],
+  "ignore": ["**/.*", "node_modules", "bower_components", "test", "tests"],
   "dependencies": {
     "purescript-prelude": "^4.0.0",
     "purescript-functions": "^4.0.0",
