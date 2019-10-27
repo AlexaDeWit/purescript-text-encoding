@@ -26,6 +26,8 @@ For earlier purescript versions please see [the original upstream package](https
 
 ## Version v1.0.0 Release
 
-Going forward the v1.0.0 package line here will be reorganized in terms of the module names, and be based on purescript 0.13
+Going forward the v1.0.0 package line here will be reorganized in terms of the module names, 
 
-Additionally, bower support is being dropped in the v1.0.0 branch, instead only supporting psc-package
+as a previous version had a name conflict in package-sets
+
+Going forward on the v1.0.0 branch, I would like to rely on the native node environment instead

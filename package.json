@@ -24,7 +24,6 @@
   "author": "Andreas Schacker",
   "license": "Apache-2.0",
   "devDependencies": {
-    "text-encoding": "^0.6.4",
     "pulp": "^12.2.0",
     "purescript-psa": "^0.6.0",
     "rimraf": "^2.6.2"
