@@ -2,7 +2,7 @@
   "name": "purescript-text-encoding",
   "description": "WHATWG/W3C Encoding Standard",
   "scripts": {
-    "setup": "npm install && bower install -p",
+    "setup": "npm install && bower install",
     "build": "pulp build",
     "test": "pulp test",
     "publish": "pulp build && pulp test && pulp publish"
