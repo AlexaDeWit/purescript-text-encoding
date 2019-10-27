@@ -5,13 +5,12 @@
 ## Installation
 
 ```
-bower install purescript-text-encoding
+spago install text-encoding
 ```
 
 This package relies on the `TextEncoder` and `TextDecoder` interfaces which are
-not yet supported everywhere. If you want to use `purescript-text-encoding` in such
-an environment, you will need to install a polyfill: `npm install
-text-encoding`.
+not yet supported everywhere. If you want to use `text-encoding` in such
+an environment, you will need to install a polyfill: `yarn add text-encoding`.
 
 ## Documentation
 
@@ -24,3 +23,9 @@ This project is a continuation fork of the purescript-encoding package released 
 The first release for this package is v0.0.7 and supports purescript 0.12
 
 For earlier purescript versions please see [the original upstream package](https://github.com/menelaos/purescript-encoding)
+
+## Version v1.0.0 Release
+
+Going forward the v1.0.0 package line here will be reorganized in terms of the module names, and be based on purescript 0.13
+
+Additionally, bower support is being dropped in the v1.0.0 branch, instead only supporting psc-package

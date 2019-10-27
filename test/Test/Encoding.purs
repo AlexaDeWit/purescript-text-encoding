@@ -1,17 +1,14 @@
-module Test.Encoding
-  ( testEncoding )
-where
+module Test.Encoding (testEncoding) where
 
-import Prelude          (Unit, discard, ($), (<<<))
-import Data.Either      (fromRight)
-import Data.TextDecoder (decodeUtf8)
-import Data.TextEncoder (encodeUtf8)
-import Effect           (Effect)
-import Effect.Console   (log)
-import Partial.Unsafe   (unsafePartial)
+import Prelude (Unit, discard, ($), (<<<))
+import Data.Either (fromRight)
+import Data.TextDecoding (decodeUtf8)
+import Data.TextEncoding (encodeUtf8)
+import Effect (Effect)
+import Effect.Console (log)
+import Partial.Unsafe (unsafePartial)
 import Test.Input
 import Test.StrongCheck (Result, (===), quickCheck)
-
 
 testEncoding :: Effect Unit
 testEncoding = do
@@ -24,7 +21,5 @@ testEncoding = do
   -- For well-formed input strings however, the equality holds.
   let
     encodingIdentityProp :: WellFormedInput -> Result
-    encodingIdentityProp (WellFormedInput str) =
-      str === unsafePartial (fromRight <<< decodeUtf8 <<< encodeUtf8 $ str)
-
+    encodingIdentityProp (WellFormedInput str) = str === unsafePartial (fromRight <<< decodeUtf8 <<< encodeUtf8 $ str)
   quickCheck encodingIdentityProp

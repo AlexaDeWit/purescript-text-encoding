@@ -1,14 +1,12 @@
-module Data.TextEncoder
+module Data.TextEncoding
   ( Encoding(..)
   , encode
   , encodeUtf8
-  )
-where
+  ) where
 
-import Data.ArrayBuffer.Types  (Uint8Array)
+import Data.ArrayBuffer.Types (Uint8Array)
 import Data.Function.Uncurried (Fn2, runFn2)
 import Prelude
-
 
 -- | Encodes a `String` to a `Uint8Array` with the given `Encoding`.
 encode :: Encoding -> String -> Uint8Array
@@ -34,6 +32,6 @@ data Encoding
 -- The show instance is used to convert an `Encoding` to a suitable
 -- `utfLabel` string that is used in the internal `_encode` helper function.
 instance showEncoding :: Show Encoding where
-  show Utf8     = "utf-8"
+  show Utf8 = "utf-8"
   show Utf_16Be = "utf-16be"
   show Utf_16Le = "utf-16le"
