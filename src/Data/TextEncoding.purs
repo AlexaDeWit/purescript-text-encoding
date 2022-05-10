@@ -1,3 +1,19 @@
+-- | Encode from `String` to `Uint8Array` with the JavaScript
+-- | [__TextEncoder__](https://developer.mozilla.org/en-US/docs/Web/API/TextEncoder/encode)
+-- | interface.
+-- |
+-- | #### `USVString` Caveat
+-- |
+-- | The input `String` is treated as a `USVString`, which is essentially
+-- | an array of `CodeUnit`s. This means that if there are any characters
+-- | in the `String` which are not in the
+-- | [Basic Multilingual Plane](https://en.wikipedia.org/wiki/Plane_(Unicode)#Basic_Multilingual_Plane)
+-- | then they will be encoded with the replacement character ‘�’ (`U+FFFD`).
+-- |
+-- | #### *Node.js* Caveat
+-- |
+-- | The runtime environment
+-- | [*Node.js* only supports Utf8 Encoding](https://nodejs.org/docs/latest-v18.x/api/util.html#class-utiltextencoder).
 module Data.TextEncoding
   ( Encoding(..)
   , encode

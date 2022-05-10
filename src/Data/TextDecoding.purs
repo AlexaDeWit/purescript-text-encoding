@@ -1,3 +1,19 @@
+-- | Decode from any `ArrayView` to `String` with the JavaScript
+-- | [__TextDecoder__](https://developer.mozilla.org/en-US/docs/Web/API/TextDecoder/decode)
+-- | interface.
+-- |
+-- | #### `USVString` Caveat
+-- |
+-- | The output `String` is a `USVString`, which is essentially
+-- | an array of `CodeUnit`s. This means that if there are any characters
+-- | in the input which are not in the
+-- | [Basic Multilingual Plane](https://en.wikipedia.org/wiki/Plane_(Unicode)#Basic_Multilingual_Plane)
+-- | then `decode` will fail with `Left Error`.
+-- |
+-- | #### *Node.js* Caveat
+-- |
+-- | The runtime environment
+-- | [*Node.js* only supports Utf8 Encoding](https://nodejs.org/docs/latest-v18.x/api/util.html#class-utiltextdecoder).
 module Data.TextDecoding
   ( Encoding(..)
   , decode
