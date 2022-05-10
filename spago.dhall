@@ -6,20 +6,15 @@ You can edit this file as you like.
     "text-encoding"
 , dependencies =
     [ "arraybuffer-types"
-    , "console"
-    , "effect"
     , "either"
     , "exceptions"
     , "functions"
-    , "partial"
     , "prelude"
-    , "psci-support"
-    , "strings"
-    , "strongcheck"
-    , "unicode"
     ]
 , packages =
     ./packages.dhall
 , sources =
-    [ "src/**/*.purs", "test/**/*.purs" ]
+    [ "src/**/*.purs", ]
+, license = "Apache 2.0"
+, repository = "https://github.com/AlexaDeWit/purescript-text-encoding.git"
 }

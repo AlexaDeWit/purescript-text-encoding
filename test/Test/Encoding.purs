@@ -6,9 +6,8 @@ import Data.TextDecoding (decodeUtf8)
 import Data.TextEncoding (encodeUtf8)
 import Effect (Effect)
 import Effect.Console (log)
-import Partial.Unsafe (unsafePartial)
 import Test.Input
-import Test.StrongCheck (Result, (===), quickCheck)
+import Test.QuickCheck (Result, (===), quickCheck)
 
 testEncoding :: Effect Unit
 testEncoding = do
@@ -21,5 +20,5 @@ testEncoding = do
   -- For well-formed input strings however, the equality holds.
   let
     encodingIdentityProp :: WellFormedInput -> Result
-    encodingIdentityProp (WellFormedInput str) = str === unsafePartial (fromRight <<< decodeUtf8 <<< encodeUtf8 $ str)
+    encodingIdentityProp (WellFormedInput str) = str === (fromRight "" <<< decodeUtf8 <<< encodeUtf8 $ str)
   quickCheck encodingIdentityProp
